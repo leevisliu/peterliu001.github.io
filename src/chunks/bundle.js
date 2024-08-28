@@ -4670,71 +4670,6 @@ System.register("chunks:///_virtual/index4.js", ['./cjs-loader.mjs'], function (
     execute: function () {
       var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
       loader.define(__cjsMetaURL, function (exports, require, module, __filename, __dirname) {
-        module.exports = asPromise;
-
-        /**
-         * Callback as used by {@link util.asPromise}.
-         * @typedef asPromiseCallback
-         * @type {function}
-         * @param {Error|null} error Error, if any
-         * @param {...*} params Additional arguments
-         * @returns {undefined}
-         */
-
-        /**
-         * Returns a promise from a node-style callback function.
-         * @memberof util
-         * @param {asPromiseCallback} fn Function to call
-         * @param {*} ctx Function context
-         * @param {...*} params Function arguments
-         * @returns {Promise<*>} Promisified function
-         */
-        function asPromise(fn, ctx /*, varargs */) {
-          var params = new Array(arguments.length - 1),
-            offset = 0,
-            index = 2,
-            pending = true;
-          while (index < arguments.length) params[offset++] = arguments[index++];
-          return new Promise(function executor(resolve, reject) {
-            params[offset] = function callback(err /*, varargs */) {
-              if (pending) {
-                pending = false;
-                if (err) reject(err);else {
-                  var params = new Array(arguments.length - 1),
-                    offset = 0;
-                  while (offset < params.length) params[offset++] = arguments[offset];
-                  resolve.apply(null, params);
-                }
-              }
-            };
-            try {
-              fn.apply(ctx || null, params);
-            } catch (err) {
-              if (pending) {
-                pending = false;
-                reject(err);
-              }
-            }
-          });
-        }
-
-        // #endregion ORIGINAL CODE
-
-        module.exports;
-      }, {});
-    }
-  };
-});
-
-System.register("chunks:///_virtual/index5.js", ['./cjs-loader.mjs'], function (exports, module) {
-  var loader;
-  return {
-    setters: [function (module) {
-      loader = module.default;
-    }],
-    execute: function () {
-      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
-      loader.define(__cjsMetaURL, function (exports, require, module, __filename, __dirname) {
         /**
          * A minimal base64 implementation for number arrays.
          * @memberof util
@@ -4875,105 +4810,7 @@ System.register("chunks:///_virtual/index5.js", ['./cjs-loader.mjs'], function (
   };
 });
 
-System.register("chunks:///_virtual/index6.js", ['./cjs-loader.mjs'], function (exports, module) {
-  var loader;
-  return {
-    setters: [function (module) {
-      loader = module.default;
-    }],
-    execute: function () {
-      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
-      loader.define(__cjsMetaURL, function (exports, require, module, __filename, __dirname) {
-        module.exports = pool;
-
-        /**
-         * An allocator as used by {@link util.pool}.
-         * @typedef PoolAllocator
-         * @type {function}
-         * @param {number} size Buffer size
-         * @returns {Uint8Array} Buffer
-         */
-
-        /**
-         * A slicer as used by {@link util.pool}.
-         * @typedef PoolSlicer
-         * @type {function}
-         * @param {number} start Start offset
-         * @param {number} end End offset
-         * @returns {Uint8Array} Buffer slice
-         * @this {Uint8Array}
-         */
-
-        /**
-         * A general purpose buffer pool.
-         * @memberof util
-         * @function
-         * @param {PoolAllocator} alloc Allocator
-         * @param {PoolSlicer} slice Slicer
-         * @param {number} [size=8192] Slab size
-         * @returns {PoolAllocator} Pooled allocator
-         */
-        function pool(alloc, slice, size) {
-          var SIZE = size || 8192;
-          var MAX = SIZE >>> 1;
-          var slab = null;
-          var offset = SIZE;
-          return function pool_alloc(size) {
-            if (size < 1 || size > MAX) return alloc(size);
-            if (offset + size > SIZE) {
-              slab = alloc(SIZE);
-              offset = 0;
-            }
-            var buf = slice.call(slab, offset, offset += size);
-            if (offset & 7)
-              // align to 32 bit
-              offset = (offset | 7) + 1;
-            return buf;
-          };
-        }
-
-        // #endregion ORIGINAL CODE
-
-        module.exports;
-      }, {});
-    }
-  };
-});
-
-System.register("chunks:///_virtual/index7.js", ['./cjs-loader.mjs'], function (exports, module) {
-  var loader;
-  return {
-    setters: [function (module) {
-      loader = module.default;
-    }],
-    execute: function () {
-      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
-      loader.define(__cjsMetaURL, function (exports, require, module, __filename, __dirname) {
-        module.exports = inquire;
-
-        /**
-         * Requires a module only if available.
-         * @memberof util
-         * @param {string} moduleName Module to require
-         * @returns {?Object} Required module if available and not empty, otherwise `null`
-         */
-        function inquire(moduleName) {
-          try {
-            var mod = eval("quire".replace(/^/, "re"))(moduleName); // eslint-disable-line no-eval
-            if (mod && (mod.length || Object.keys(mod).length)) return mod;
-          } catch (e) {} // eslint-disable-line no-empty
-          return null;
-        }
-
-        // #endregion ORIGINAL CODE
-
-        module.exports;
-      }, {});
-    }
-  };
-});
-
-System.register("chunks:///_virtual/index8.js", ['./cjs-loader.mjs'], function (exports, module) {
+System.register("chunks:///_virtual/index5.js", ['./cjs-loader.mjs'], function (exports, module) {
   var loader;
   return {
     setters: [function (module) {
@@ -5286,7 +5123,7 @@ System.register("chunks:///_virtual/index8.js", ['./cjs-loader.mjs'], function (
   };
 });
 
-System.register("chunks:///_virtual/index9.js", ['./cjs-loader.mjs'], function (exports, module) {
+System.register("chunks:///_virtual/index6.js", ['./cjs-loader.mjs'], function (exports, module) {
   var loader;
   return {
     setters: [function (module) {
@@ -5388,6 +5225,169 @@ System.register("chunks:///_virtual/index9.js", ['./cjs-loader.mjs'], function (
           }
           return offset - start;
         };
+
+        // #endregion ORIGINAL CODE
+
+        module.exports;
+      }, {});
+    }
+  };
+});
+
+System.register("chunks:///_virtual/index7.js", ['./cjs-loader.mjs'], function (exports, module) {
+  var loader;
+  return {
+    setters: [function (module) {
+      loader = module.default;
+    }],
+    execute: function () {
+      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
+      loader.define(__cjsMetaURL, function (exports, require, module, __filename, __dirname) {
+        module.exports = pool;
+
+        /**
+         * An allocator as used by {@link util.pool}.
+         * @typedef PoolAllocator
+         * @type {function}
+         * @param {number} size Buffer size
+         * @returns {Uint8Array} Buffer
+         */
+
+        /**
+         * A slicer as used by {@link util.pool}.
+         * @typedef PoolSlicer
+         * @type {function}
+         * @param {number} start Start offset
+         * @param {number} end End offset
+         * @returns {Uint8Array} Buffer slice
+         * @this {Uint8Array}
+         */
+
+        /**
+         * A general purpose buffer pool.
+         * @memberof util
+         * @function
+         * @param {PoolAllocator} alloc Allocator
+         * @param {PoolSlicer} slice Slicer
+         * @param {number} [size=8192] Slab size
+         * @returns {PoolAllocator} Pooled allocator
+         */
+        function pool(alloc, slice, size) {
+          var SIZE = size || 8192;
+          var MAX = SIZE >>> 1;
+          var slab = null;
+          var offset = SIZE;
+          return function pool_alloc(size) {
+            if (size < 1 || size > MAX) return alloc(size);
+            if (offset + size > SIZE) {
+              slab = alloc(SIZE);
+              offset = 0;
+            }
+            var buf = slice.call(slab, offset, offset += size);
+            if (offset & 7)
+              // align to 32 bit
+              offset = (offset | 7) + 1;
+            return buf;
+          };
+        }
+
+        // #endregion ORIGINAL CODE
+
+        module.exports;
+      }, {});
+    }
+  };
+});
+
+System.register("chunks:///_virtual/index8.js", ['./cjs-loader.mjs'], function (exports, module) {
+  var loader;
+  return {
+    setters: [function (module) {
+      loader = module.default;
+    }],
+    execute: function () {
+      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
+      loader.define(__cjsMetaURL, function (exports, require, module, __filename, __dirname) {
+        module.exports = asPromise;
+
+        /**
+         * Callback as used by {@link util.asPromise}.
+         * @typedef asPromiseCallback
+         * @type {function}
+         * @param {Error|null} error Error, if any
+         * @param {...*} params Additional arguments
+         * @returns {undefined}
+         */
+
+        /**
+         * Returns a promise from a node-style callback function.
+         * @memberof util
+         * @param {asPromiseCallback} fn Function to call
+         * @param {*} ctx Function context
+         * @param {...*} params Function arguments
+         * @returns {Promise<*>} Promisified function
+         */
+        function asPromise(fn, ctx /*, varargs */) {
+          var params = new Array(arguments.length - 1),
+            offset = 0,
+            index = 2,
+            pending = true;
+          while (index < arguments.length) params[offset++] = arguments[index++];
+          return new Promise(function executor(resolve, reject) {
+            params[offset] = function callback(err /*, varargs */) {
+              if (pending) {
+                pending = false;
+                if (err) reject(err);else {
+                  var params = new Array(arguments.length - 1),
+                    offset = 0;
+                  while (offset < params.length) params[offset++] = arguments[offset];
+                  resolve.apply(null, params);
+                }
+              }
+            };
+            try {
+              fn.apply(ctx || null, params);
+            } catch (err) {
+              if (pending) {
+                pending = false;
+                reject(err);
+              }
+            }
+          });
+        }
+
+        // #endregion ORIGINAL CODE
+
+        module.exports;
+      }, {});
+    }
+  };
+});
+
+System.register("chunks:///_virtual/index9.js", ['./cjs-loader.mjs'], function (exports, module) {
+  var loader;
+  return {
+    setters: [function (module) {
+      loader = module.default;
+    }],
+    execute: function () {
+      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
+      loader.define(__cjsMetaURL, function (exports, require, module, __filename, __dirname) {
+        module.exports = inquire;
+
+        /**
+         * Requires a module only if available.
+         * @memberof util
+         * @param {string} moduleName Module to require
+         * @returns {?Object} Required module if available and not empty, otherwise `null`
+         */
+        function inquire(moduleName) {
+          try {
+            var mod = eval("quire".replace(/^/, "re"))(moduleName); // eslint-disable-line no-eval
+            if (mod && (mod.length || Object.keys(mod).length)) return mod;
+          } catch (e) {} // eslint-disable-line no-empty
+          return null;
+        }
 
         // #endregion ORIGINAL CODE
 
@@ -5843,7 +5843,7 @@ System.register("chunks:///_virtual/minimal.js", ['./cjs-loader.mjs', './index-m
   };
 });
 
-System.register("chunks:///_virtual/minimal2.js", ['./cjs-loader.mjs', './index4.js', './index5.js', './index3.js', './index8.js', './index7.js', './index9.js', './index6.js', './longbits.js'], function (exports, module) {
+System.register("chunks:///_virtual/minimal2.js", ['./cjs-loader.mjs', './index8.js', './index4.js', './index3.js', './index5.js', './index9.js', './index6.js', './index7.js', './longbits.js'], function (exports, module) {
   var loader, __cjsMetaURL$1, __cjsMetaURL$2, __cjsMetaURL$3, __cjsMetaURL$4, __cjsMetaURL$5, __cjsMetaURL$6, __cjsMetaURL$7, __cjsMetaURL$8;
   return {
     setters: [function (module) {

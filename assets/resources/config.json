@@ -157,21 +157,6 @@
             "cc.BufferAsset",
             1
         ],
-        "ce006795-d53e-4e42-b70a-e76abb7fe880": [
-            "FGUI/GamePlay_atlas0",
-            "cc.ImageAsset",
-            1
-        ],
-        "ce006795-d53e-4e42-b70a-e76abb7fe880@6c48a": [
-            "FGUI/GamePlay_atlas0/texture",
-            "cc.Texture2D",
-            1
-        ],
-        "ce006795-d53e-4e42-b70a-e76abb7fe880@f9941": [
-            "FGUI/GamePlay_atlas0/spriteFrame",
-            "cc.SpriteFrame",
-            1
-        ],
         "3afbc416-03a4-408d-91dc-1858b603bfe6": [
             "FGUI/Launch",
             "cc.BufferAsset",
@@ -764,6 +749,21 @@
         ],
         "d86f7f98-8138-459f-8ffb-5bb3780aa714@f9941": [
             "CCRes/TexasGamePlay/Spine/Expression/wink_dc/spriteFrame",
+            "cc.SpriteFrame",
+            1
+        ],
+        "ce006795-d53e-4e42-b70a-e76abb7fe880": [
+            "FGUI/GamePlay_atlas0",
+            "cc.ImageAsset",
+            1
+        ],
+        "ce006795-d53e-4e42-b70a-e76abb7fe880@6c48a": [
+            "FGUI/GamePlay_atlas0/texture",
+            "cc.Texture2D",
+            1
+        ],
+        "ce006795-d53e-4e42-b70a-e76abb7fe880@f9941": [
+            "FGUI/GamePlay_atlas0/spriteFrame",
             "cc.SpriteFrame",
             1
         ]
