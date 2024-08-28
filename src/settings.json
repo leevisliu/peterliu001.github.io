@@ -109,7 +109,6 @@
     },
     "CustomSettings": {
         "tgMiniApp": false,
-        "testMode": true,
         "defaultConfig": "Test",
         "channel": "1000"
     }
