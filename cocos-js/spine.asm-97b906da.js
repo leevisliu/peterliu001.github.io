@@ -35,4 +35,3 @@ System.register([], (function (exports) {
     })
   };
 }));
-//# sourceMappingURL=spine.asm-97b906da.js.map

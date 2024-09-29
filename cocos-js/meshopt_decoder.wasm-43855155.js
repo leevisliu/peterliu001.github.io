@@ -8,4 +8,3 @@ System.register([], (function (exports, module) {
 		})
 	};
 }));
-//# sourceMappingURL=meshopt_decoder.wasm-43855155.js.map

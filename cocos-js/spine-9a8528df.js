@@ -8,4 +8,3 @@ System.register([], (function (exports, module) {
 		})
 	};
 }));
-//# sourceMappingURL=spine-9a8528df.js.map

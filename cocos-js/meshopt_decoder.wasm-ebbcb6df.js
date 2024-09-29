@@ -156,4 +156,3 @@ System.register([], (function (exports) {
 		})
 	};
 }));
-//# sourceMappingURL=meshopt_decoder.wasm-ebbcb6df.js.map
