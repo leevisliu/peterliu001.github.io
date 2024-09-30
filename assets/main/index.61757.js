@@ -293,13 +293,13 @@ System.register("chunks:///_virtual/main.ts", ['./rollupPluginModLoBabelHelpers.
       Component = module.Component;
     }],
     execute: function () {
-      var _dec, _dec2, _class, _class2, _descriptor;
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2;
       cclegacy._RF.push({}, "86fdc/KaZ5BsYME+DbKigN3", "main", undefined);
       var ccclass = _decorator.ccclass,
         property = _decorator.property;
       var main = exports('main', (_dec = ccclass('main'), _dec2 = property({
         type: EditBox
-      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+      }), _dec3 = property(Node), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
         _inheritsLoose(main, _Component);
         function main() {
           var _this;
@@ -308,25 +308,37 @@ System.register("chunks:///_virtual/main.ts", ['./rollupPluginModLoBabelHelpers.
           }
           _this = _Component.call.apply(_Component, [this].concat(args)) || this;
           _initializerDefineProperty(_this, "inputEdit", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "btnNode", _descriptor2, _assertThisInitialized(_this));
           return _this;
         }
         var _proto = main.prototype;
         _proto.start = function start() {
           // this.inputEdit.node.on( Node.EventType.TOUCH_START,this.btnCallback.bind(this),this);
+          this.btnNode.on(Node.EventType.TOUCH_END, this.onTouchEnd, this);
         };
         _proto.btnCallback = function btnCallback() {
           // this.inputEdit['_impl'].beginEditing();
-          this.inputEdit.node.emit(Node.EventType.TOUCH_END);
+          // new EventTouch()
+        };
+        _proto.onTouchEnd = function onTouchEnd(evt) {
+          this.inputEdit.node.emit(Node.EventType.TOUCH_END, evt);
         };
         return main;
-      }(Component), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "inputEdit", [_dec2], {
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "inputEdit", [_dec2], {
         configurable: true,
         enumerable: true,
         writable: true,
         initializer: function initializer() {
           return null;
         }
-      }), _class2)) || _class));
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "btnNode", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
       cclegacy._RF.pop();
     }
   };
