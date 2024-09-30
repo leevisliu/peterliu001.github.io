@@ -2,21 +2,30 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>input测试</title>
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
-		<p>version:1</p>
-		<input class="claInput" type="text"/>
+		<div class="base">
+			<p>version:1</p>
+			<input class="claInput" type="text"/>
+		</div>
+		
 	</body>
 	<style>
 		body{
 			background-color: beige;
 			width: 100%;
 		}
-		.claInput{
+		.base{
+			width: 80%;
 			margin: auto;
+			position: absolute;
+			bottom: 20px;
+			background-color: bisque;
+		}
+		.claInput{
 			width: 80%;
 			background-color: aquamarine;
 		}
