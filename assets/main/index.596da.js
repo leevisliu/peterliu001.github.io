@@ -278,7 +278,7 @@ System.register("chunks:///_virtual/main", ['./main.ts', './debug-view-runtime-c
 });
 
 System.register("chunks:///_virtual/main.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
-  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, EditBox, Component;
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, EditBox, Node, Component;
   return {
     setters: [function (module) {
       _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
@@ -289,6 +289,7 @@ System.register("chunks:///_virtual/main.ts", ['./rollupPluginModLoBabelHelpers.
       cclegacy = module.cclegacy;
       _decorator = module._decorator;
       EditBox = module.EditBox;
+      Node = module.Node;
       Component = module.Component;
     }],
     execute: function () {
@@ -310,7 +311,9 @@ System.register("chunks:///_virtual/main.ts", ['./rollupPluginModLoBabelHelpers.
           return _this;
         }
         var _proto = main.prototype;
-        _proto.start = function start() {};
+        _proto.start = function start() {
+          this.inputEdit.node.on(Node.EventType.TOUCH_START, this.btnCallback.bind(this), this);
+        };
         _proto.btnCallback = function btnCallback() {
           this.inputEdit['_impl'].beginEditing();
         };
