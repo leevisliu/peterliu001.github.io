@@ -270,10 +270,61 @@ System.register("chunks:///_virtual/debug-view-runtime-control.ts", ['./rollupPl
   };
 });
 
-System.register("chunks:///_virtual/main", ['./debug-view-runtime-control.ts'], function () {
+System.register("chunks:///_virtual/main", ['./main.ts', './debug-view-runtime-control.ts'], function () {
   return {
-    setters: [null],
+    setters: [null, null],
     execute: function () {}
+  };
+});
+
+System.register("chunks:///_virtual/main.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, EditBox, Component;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      EditBox = module.EditBox;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2, _descriptor;
+      cclegacy._RF.push({}, "86fdc/KaZ5BsYME+DbKigN3", "main", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var main = exports('main', (_dec = ccclass('main'), _dec2 = property({
+        type: EditBox
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(main, _Component);
+        function main() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "inputEdit", _descriptor, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = main.prototype;
+        _proto.start = function start() {};
+        _proto.btnCallback = function btnCallback() {
+          this.inputEdit['_impl'].beginEditing();
+        };
+        return main;
+      }(Component), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "inputEdit", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
   };
 });
 

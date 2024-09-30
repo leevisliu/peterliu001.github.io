@@ -41,7 +41,7 @@
         ],
         "bundleVers": {
             "internal": "54abc",
-            "main": "c9063"
+            "main": "95839"
         },
         "preloadAssets": [],
         "projectBundles": [
@@ -66,7 +66,7 @@
         "designResolution": {
             "width": 720,
             "height": 1280,
-            "policy": 2
+            "policy": 4
         },
         "orientation": "portrait"
     },
