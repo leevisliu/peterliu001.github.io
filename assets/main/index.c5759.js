@@ -312,10 +312,11 @@ System.register("chunks:///_virtual/main.ts", ['./rollupPluginModLoBabelHelpers.
         }
         var _proto = main.prototype;
         _proto.start = function start() {
-          this.inputEdit.node.on(Node.EventType.TOUCH_START, this.btnCallback.bind(this), this);
+          // this.inputEdit.node.on( Node.EventType.TOUCH_START,this.btnCallback.bind(this),this);
         };
         _proto.btnCallback = function btnCallback() {
-          this.inputEdit['_impl'].beginEditing();
+          // this.inputEdit['_impl'].beginEditing();
+          this.inputEdit.node.emit(Node.EventType.TOUCH_END);
         };
         return main;
       }(Component), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "inputEdit", [_dec2], {
