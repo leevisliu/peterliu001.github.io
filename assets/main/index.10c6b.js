@@ -315,13 +315,17 @@ System.register("chunks:///_virtual/main.ts", ['./rollupPluginModLoBabelHelpers.
         _proto.start = function start() {
           // this.inputEdit.node.on( Node.EventType.TOUCH_START,this.btnCallback.bind(this),this);
           this.btnNode.on(Node.EventType.TOUCH_END, this.onTouchEnd, this);
+          this.btnNode.on(Node.EventType.TOUCH_START, this.onTouchStart, this);
         };
         _proto.btnCallback = function btnCallback() {
           // this.inputEdit['_impl'].beginEditing();
           // new EventTouch()
         };
+        _proto.onTouchStart = function onTouchStart(evt) {
+          window.emit(Node.EventType.TOUCH_START, evt);
+        };
         _proto.onTouchEnd = function onTouchEnd(evt) {
-          this.inputEdit.node.emit(Node.EventType.TOUCH_END, evt);
+          window.emit(Node.EventType.TOUCH_END, evt);
         };
         return main;
       }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "inputEdit", [_dec2], {
