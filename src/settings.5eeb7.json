@@ -41,7 +41,7 @@
         ],
         "bundleVers": {
             "internal": "54abc",
-            "main": "5523f"
+            "main": "a236f"
         },
         "preloadAssets": [],
         "projectBundles": [
@@ -68,7 +68,7 @@
             "height": 1280,
             "policy": 4
         },
-        "orientation": "portrait"
+        "orientation": "auto"
     },
     "rendering": {
         "renderPipeline": ""
