@@ -43346,9 +43346,7 @@ System.register("chunks:///_virtual/NativeDeviceBridge.ts", ['./rollupPluginModL
                   return this.getAppInfo();
                 case 5:
                   this._appInfo = _context.sent;
-                  _context.next = 8;
-                  return NativeDeviceBridge.keepScreenWake(true);
-                case 8:
+                case 6:
                 case "end":
                   return _context.stop();
               }
