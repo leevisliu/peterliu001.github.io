@@ -4617,6 +4617,71 @@ System.register("chunks:///_virtual/index11.js", ['./cjs-loader.mjs'], function 
     execute: function () {
       var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
       loader.define(__cjsMetaURL, function (exports, require, module, __filename, __dirname) {
+        module.exports = pool;
+
+        /**
+         * An allocator as used by {@link util.pool}.
+         * @typedef PoolAllocator
+         * @type {function}
+         * @param {number} size Buffer size
+         * @returns {Uint8Array} Buffer
+         */
+
+        /**
+         * A slicer as used by {@link util.pool}.
+         * @typedef PoolSlicer
+         * @type {function}
+         * @param {number} start Start offset
+         * @param {number} end End offset
+         * @returns {Uint8Array} Buffer slice
+         * @this {Uint8Array}
+         */
+
+        /**
+         * A general purpose buffer pool.
+         * @memberof util
+         * @function
+         * @param {PoolAllocator} alloc Allocator
+         * @param {PoolSlicer} slice Slicer
+         * @param {number} [size=8192] Slab size
+         * @returns {PoolAllocator} Pooled allocator
+         */
+        function pool(alloc, slice, size) {
+          var SIZE = size || 8192;
+          var MAX = SIZE >>> 1;
+          var slab = null;
+          var offset = SIZE;
+          return function pool_alloc(size) {
+            if (size < 1 || size > MAX) return alloc(size);
+            if (offset + size > SIZE) {
+              slab = alloc(SIZE);
+              offset = 0;
+            }
+            var buf = slice.call(slab, offset, offset += size);
+            if (offset & 7)
+              // align to 32 bit
+              offset = (offset | 7) + 1;
+            return buf;
+          };
+        }
+
+        // #endregion ORIGINAL CODE
+
+        module.exports;
+      }, {});
+    }
+  };
+});
+
+System.register("chunks:///_virtual/index12.js", ['./cjs-loader.mjs'], function (exports, module) {
+  var loader;
+  return {
+    setters: [function (module) {
+      loader = module.default;
+    }],
+    execute: function () {
+      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
+      loader.define(__cjsMetaURL, function (exports, require, module, __filename, __dirname) {
         /**
          * A minimal UTF8 implementation for number arrays.
          * @memberof util
@@ -4710,71 +4775,6 @@ System.register("chunks:///_virtual/index11.js", ['./cjs-loader.mjs'], function 
           }
           return offset - start;
         };
-
-        // #endregion ORIGINAL CODE
-
-        module.exports;
-      }, {});
-    }
-  };
-});
-
-System.register("chunks:///_virtual/index12.js", ['./cjs-loader.mjs'], function (exports, module) {
-  var loader;
-  return {
-    setters: [function (module) {
-      loader = module.default;
-    }],
-    execute: function () {
-      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
-      loader.define(__cjsMetaURL, function (exports, require, module, __filename, __dirname) {
-        module.exports = pool;
-
-        /**
-         * An allocator as used by {@link util.pool}.
-         * @typedef PoolAllocator
-         * @type {function}
-         * @param {number} size Buffer size
-         * @returns {Uint8Array} Buffer
-         */
-
-        /**
-         * A slicer as used by {@link util.pool}.
-         * @typedef PoolSlicer
-         * @type {function}
-         * @param {number} start Start offset
-         * @param {number} end End offset
-         * @returns {Uint8Array} Buffer slice
-         * @this {Uint8Array}
-         */
-
-        /**
-         * A general purpose buffer pool.
-         * @memberof util
-         * @function
-         * @param {PoolAllocator} alloc Allocator
-         * @param {PoolSlicer} slice Slicer
-         * @param {number} [size=8192] Slab size
-         * @returns {PoolAllocator} Pooled allocator
-         */
-        function pool(alloc, slice, size) {
-          var SIZE = size || 8192;
-          var MAX = SIZE >>> 1;
-          var slab = null;
-          var offset = SIZE;
-          return function pool_alloc(size) {
-            if (size < 1 || size > MAX) return alloc(size);
-            if (offset + size > SIZE) {
-              slab = alloc(SIZE);
-              offset = 0;
-            }
-            var buf = slice.call(slab, offset, offset += size);
-            if (offset & 7)
-              // align to 32 bit
-              offset = (offset | 7) + 1;
-            return buf;
-          };
-        }
 
         // #endregion ORIGINAL CODE
 
@@ -6323,122 +6323,7 @@ System.register("chunks:///_virtual/index2.js", ['./rollupPluginModLoBabelHelper
   };
 });
 
-System.register("chunks:///_virtual/index3.js", ['./cjs-loader.mjs'], function (exports, module) {
-  var loader;
-  return {
-    setters: [function (module) {
-      loader = module.default;
-    }],
-    execute: function () {
-      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
-      loader.define(__cjsMetaURL, function (exports, require, module, __filename, __dirname) {
-        module.exports = codegen;
-
-        /**
-         * Begins generating a function.
-         * @memberof util
-         * @param {string[]} functionParams Function parameter names
-         * @param {string} [functionName] Function name if not anonymous
-         * @returns {Codegen} Appender that appends code to the function's body
-         */
-        function codegen(functionParams, functionName) {
-          /* istanbul ignore if */
-          if (typeof functionParams === "string") {
-            functionName = functionParams;
-            functionParams = undefined;
-          }
-          var body = [];
-
-          /**
-           * Appends code to the function's body or finishes generation.
-           * @typedef Codegen
-           * @type {function}
-           * @param {string|Object.<string,*>} [formatStringOrScope] Format string or, to finish the function, an object of additional scope variables, if any
-           * @param {...*} [formatParams] Format parameters
-           * @returns {Codegen|Function} Itself or the generated function if finished
-           * @throws {Error} If format parameter counts do not match
-           */
-
-          function Codegen(formatStringOrScope) {
-            // note that explicit array handling below makes this ~50% faster
-
-            // finish the function
-            if (typeof formatStringOrScope !== "string") {
-              var source = toString();
-              if (codegen.verbose) console.log("codegen: " + source); // eslint-disable-line no-console
-              source = "return " + source;
-              if (formatStringOrScope) {
-                var scopeKeys = Object.keys(formatStringOrScope),
-                  scopeParams = new Array(scopeKeys.length + 1),
-                  scopeValues = new Array(scopeKeys.length),
-                  scopeOffset = 0;
-                while (scopeOffset < scopeKeys.length) {
-                  scopeParams[scopeOffset] = scopeKeys[scopeOffset];
-                  scopeValues[scopeOffset] = formatStringOrScope[scopeKeys[scopeOffset++]];
-                }
-                scopeParams[scopeOffset] = source;
-                return Function.apply(null, scopeParams).apply(null, scopeValues); // eslint-disable-line no-new-func
-              }
-
-              return Function(source)(); // eslint-disable-line no-new-func
-            }
-
-            // otherwise append to body
-            var formatParams = new Array(arguments.length - 1),
-              formatOffset = 0;
-            while (formatOffset < formatParams.length) formatParams[formatOffset] = arguments[++formatOffset];
-            formatOffset = 0;
-            formatStringOrScope = formatStringOrScope.replace(/%([%dfijs])/g, function replace($0, $1) {
-              var value = formatParams[formatOffset++];
-              switch ($1) {
-                case "d":
-                case "f":
-                  return String(Number(value));
-                case "i":
-                  return String(Math.floor(value));
-                case "j":
-                  return JSON.stringify(value);
-                case "s":
-                  return String(value);
-              }
-              return "%";
-            });
-            if (formatOffset !== formatParams.length) throw Error("parameter count mismatch");
-            body.push(formatStringOrScope);
-            return Codegen;
-          }
-          function toString(functionNameOverride) {
-            return "function " + (functionNameOverride || functionName || "") + "(" + (functionParams && functionParams.join(",") || "") + "){\n  " + body.join("\n  ") + "\n}";
-          }
-          Codegen.toString = toString;
-          return Codegen;
-        }
-
-        /**
-         * Begins generating a function.
-         * @memberof util
-         * @function codegen
-         * @param {string} [functionName] Function name if not anonymous
-         * @returns {Codegen} Appender that appends code to the function's body
-         * @variation 2
-         */
-
-        /**
-         * When set to `true`, codegen will log generated code to console. Useful for debugging.
-         * @name util.codegen.verbose
-         * @type {boolean}
-         */
-        codegen.verbose = false;
-
-        // #endregion ORIGINAL CODE
-
-        module.exports;
-      }, {});
-    }
-  };
-});
-
-System.register("chunks:///_virtual/index4.js", ['./cjs-loader.mjs', './index6.js', './index9.js'], function (exports, module) {
+System.register("chunks:///_virtual/index3.js", ['./cjs-loader.mjs', './index6.js', './index9.js'], function (exports, module) {
   var loader, __cjsMetaURL$1, __cjsMetaURL$2;
   return {
     setters: [function (module) {
@@ -6558,6 +6443,121 @@ System.register("chunks:///_virtual/index4.js", ['./cjs-loader.mjs', './index6.j
           '@protobufjs/inquire': __cjsMetaURL$2
         };
       });
+    }
+  };
+});
+
+System.register("chunks:///_virtual/index4.js", ['./cjs-loader.mjs'], function (exports, module) {
+  var loader;
+  return {
+    setters: [function (module) {
+      loader = module.default;
+    }],
+    execute: function () {
+      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
+      loader.define(__cjsMetaURL, function (exports, require, module, __filename, __dirname) {
+        module.exports = codegen;
+
+        /**
+         * Begins generating a function.
+         * @memberof util
+         * @param {string[]} functionParams Function parameter names
+         * @param {string} [functionName] Function name if not anonymous
+         * @returns {Codegen} Appender that appends code to the function's body
+         */
+        function codegen(functionParams, functionName) {
+          /* istanbul ignore if */
+          if (typeof functionParams === "string") {
+            functionName = functionParams;
+            functionParams = undefined;
+          }
+          var body = [];
+
+          /**
+           * Appends code to the function's body or finishes generation.
+           * @typedef Codegen
+           * @type {function}
+           * @param {string|Object.<string,*>} [formatStringOrScope] Format string or, to finish the function, an object of additional scope variables, if any
+           * @param {...*} [formatParams] Format parameters
+           * @returns {Codegen|Function} Itself or the generated function if finished
+           * @throws {Error} If format parameter counts do not match
+           */
+
+          function Codegen(formatStringOrScope) {
+            // note that explicit array handling below makes this ~50% faster
+
+            // finish the function
+            if (typeof formatStringOrScope !== "string") {
+              var source = toString();
+              if (codegen.verbose) console.log("codegen: " + source); // eslint-disable-line no-console
+              source = "return " + source;
+              if (formatStringOrScope) {
+                var scopeKeys = Object.keys(formatStringOrScope),
+                  scopeParams = new Array(scopeKeys.length + 1),
+                  scopeValues = new Array(scopeKeys.length),
+                  scopeOffset = 0;
+                while (scopeOffset < scopeKeys.length) {
+                  scopeParams[scopeOffset] = scopeKeys[scopeOffset];
+                  scopeValues[scopeOffset] = formatStringOrScope[scopeKeys[scopeOffset++]];
+                }
+                scopeParams[scopeOffset] = source;
+                return Function.apply(null, scopeParams).apply(null, scopeValues); // eslint-disable-line no-new-func
+              }
+
+              return Function(source)(); // eslint-disable-line no-new-func
+            }
+
+            // otherwise append to body
+            var formatParams = new Array(arguments.length - 1),
+              formatOffset = 0;
+            while (formatOffset < formatParams.length) formatParams[formatOffset] = arguments[++formatOffset];
+            formatOffset = 0;
+            formatStringOrScope = formatStringOrScope.replace(/%([%dfijs])/g, function replace($0, $1) {
+              var value = formatParams[formatOffset++];
+              switch ($1) {
+                case "d":
+                case "f":
+                  return String(Number(value));
+                case "i":
+                  return String(Math.floor(value));
+                case "j":
+                  return JSON.stringify(value);
+                case "s":
+                  return String(value);
+              }
+              return "%";
+            });
+            if (formatOffset !== formatParams.length) throw Error("parameter count mismatch");
+            body.push(formatStringOrScope);
+            return Codegen;
+          }
+          function toString(functionNameOverride) {
+            return "function " + (functionNameOverride || functionName || "") + "(" + (functionParams && functionParams.join(",") || "") + "){\n  " + body.join("\n  ") + "\n}";
+          }
+          Codegen.toString = toString;
+          return Codegen;
+        }
+
+        /**
+         * Begins generating a function.
+         * @memberof util
+         * @function codegen
+         * @param {string} [functionName] Function name if not anonymous
+         * @returns {Codegen} Appender that appends code to the function's body
+         * @variation 2
+         */
+
+        /**
+         * When set to `true`, codegen will log generated code to console. Useful for debugging.
+         * @name util.codegen.verbose
+         * @type {boolean}
+         */
+        codegen.verbose = false;
+
+        // #endregion ORIGINAL CODE
+
+        module.exports;
+      }, {});
     }
   };
 });
@@ -6702,88 +6702,6 @@ System.register("chunks:///_virtual/index7.js", ['./cjs-loader.mjs'], function (
     execute: function () {
       var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
       loader.define(__cjsMetaURL, function (exports, require, module, __filename, __dirname) {
-        module.exports = EventEmitter;
-
-        /**
-         * Constructs a new event emitter instance.
-         * @classdesc A minimal event emitter.
-         * @memberof util
-         * @constructor
-         */
-        function EventEmitter() {
-          /**
-           * Registered listeners.
-           * @type {Object.<string,*>}
-           * @private
-           */
-          this._listeners = {};
-        }
-
-        /**
-         * Registers an event listener.
-         * @param {string} evt Event name
-         * @param {function} fn Listener
-         * @param {*} [ctx] Listener context
-         * @returns {util.EventEmitter} `this`
-         */
-        EventEmitter.prototype.on = function on(evt, fn, ctx) {
-          (this._listeners[evt] || (this._listeners[evt] = [])).push({
-            fn: fn,
-            ctx: ctx || this
-          });
-          return this;
-        };
-
-        /**
-         * Removes an event listener or any matching listeners if arguments are omitted.
-         * @param {string} [evt] Event name. Removes all listeners if omitted.
-         * @param {function} [fn] Listener to remove. Removes all listeners of `evt` if omitted.
-         * @returns {util.EventEmitter} `this`
-         */
-        EventEmitter.prototype.off = function off(evt, fn) {
-          if (evt === undefined) this._listeners = {};else {
-            if (fn === undefined) this._listeners[evt] = [];else {
-              var listeners = this._listeners[evt];
-              for (var i = 0; i < listeners.length;) if (listeners[i].fn === fn) listeners.splice(i, 1);else ++i;
-            }
-          }
-          return this;
-        };
-
-        /**
-         * Emits an event by calling its listeners with the specified arguments.
-         * @param {string} evt Event name
-         * @param {...*} args Arguments
-         * @returns {util.EventEmitter} `this`
-         */
-        EventEmitter.prototype.emit = function emit(evt) {
-          var listeners = this._listeners[evt];
-          if (listeners) {
-            var args = [],
-              i = 1;
-            for (; i < arguments.length;) args.push(arguments[i++]);
-            for (i = 0; i < listeners.length;) listeners[i].fn.apply(listeners[i++].ctx, args);
-          }
-          return this;
-        };
-
-        // #endregion ORIGINAL CODE
-
-        module.exports;
-      }, {});
-    }
-  };
-});
-
-System.register("chunks:///_virtual/index8.js", ['./cjs-loader.mjs'], function (exports, module) {
-  var loader;
-  return {
-    setters: [function (module) {
-      loader = module.default;
-    }],
-    execute: function () {
-      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
-      loader.define(__cjsMetaURL, function (exports, require, module, __filename, __dirname) {
         /**
          * A minimal base64 implementation for number arrays.
          * @memberof util
@@ -6914,6 +6832,88 @@ System.register("chunks:///_virtual/index8.js", ['./cjs-loader.mjs'], function (
          */
         base64.test = function test(string) {
           return /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(string);
+        };
+
+        // #endregion ORIGINAL CODE
+
+        module.exports;
+      }, {});
+    }
+  };
+});
+
+System.register("chunks:///_virtual/index8.js", ['./cjs-loader.mjs'], function (exports, module) {
+  var loader;
+  return {
+    setters: [function (module) {
+      loader = module.default;
+    }],
+    execute: function () {
+      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
+      loader.define(__cjsMetaURL, function (exports, require, module, __filename, __dirname) {
+        module.exports = EventEmitter;
+
+        /**
+         * Constructs a new event emitter instance.
+         * @classdesc A minimal event emitter.
+         * @memberof util
+         * @constructor
+         */
+        function EventEmitter() {
+          /**
+           * Registered listeners.
+           * @type {Object.<string,*>}
+           * @private
+           */
+          this._listeners = {};
+        }
+
+        /**
+         * Registers an event listener.
+         * @param {string} evt Event name
+         * @param {function} fn Listener
+         * @param {*} [ctx] Listener context
+         * @returns {util.EventEmitter} `this`
+         */
+        EventEmitter.prototype.on = function on(evt, fn, ctx) {
+          (this._listeners[evt] || (this._listeners[evt] = [])).push({
+            fn: fn,
+            ctx: ctx || this
+          });
+          return this;
+        };
+
+        /**
+         * Removes an event listener or any matching listeners if arguments are omitted.
+         * @param {string} [evt] Event name. Removes all listeners if omitted.
+         * @param {function} [fn] Listener to remove. Removes all listeners of `evt` if omitted.
+         * @returns {util.EventEmitter} `this`
+         */
+        EventEmitter.prototype.off = function off(evt, fn) {
+          if (evt === undefined) this._listeners = {};else {
+            if (fn === undefined) this._listeners[evt] = [];else {
+              var listeners = this._listeners[evt];
+              for (var i = 0; i < listeners.length;) if (listeners[i].fn === fn) listeners.splice(i, 1);else ++i;
+            }
+          }
+          return this;
+        };
+
+        /**
+         * Emits an event by calling its listeners with the specified arguments.
+         * @param {string} evt Event name
+         * @param {...*} args Arguments
+         * @returns {util.EventEmitter} `this`
+         */
+        EventEmitter.prototype.emit = function emit(evt) {
+          var listeners = this._listeners[evt];
+          if (listeners) {
+            var args = [],
+              i = 1;
+            for (; i < arguments.length;) args.push(arguments[i++]);
+            for (i = 0; i < listeners.length;) listeners[i].fn.apply(listeners[i++].ctx, args);
+          }
+          return this;
         };
 
         // #endregion ORIGINAL CODE
@@ -7867,7 +7867,7 @@ System.register("chunks:///_virtual/method.js", ['./cjs-loader.mjs', './object.j
   };
 });
 
-System.register("chunks:///_virtual/minimal.js", ['./cjs-loader.mjs', './index6.js', './index8.js', './index7.js', './index10.js', './index9.js', './index11.js', './index12.js', './longbits.js'], function (exports, module) {
+System.register("chunks:///_virtual/minimal.js", ['./cjs-loader.mjs', './index6.js', './index7.js', './index8.js', './index10.js', './index9.js', './index12.js', './index11.js', './longbits.js'], function (exports, module) {
   var loader, __cjsMetaURL$1, __cjsMetaURL$2, __cjsMetaURL$3, __cjsMetaURL$4, __cjsMetaURL$5, __cjsMetaURL$6, __cjsMetaURL$7, __cjsMetaURL$8;
   return {
     setters: [function (module) {
@@ -26200,7 +26200,7 @@ System.register("chunks:///_virtual/types.js", ['./cjs-loader.mjs', './util.js']
   };
 });
 
-System.register("chunks:///_virtual/util.js", ['./cjs-loader.mjs', './minimal.js', './roots.js', './index3.js', './index4.js', './index5.js', './type.js', './enum.js', './root.js'], function (exports, module) {
+System.register("chunks:///_virtual/util.js", ['./cjs-loader.mjs', './minimal.js', './roots.js', './index4.js', './index3.js', './index5.js', './type.js', './enum.js', './root.js'], function (exports, module) {
   var loader, __cjsMetaURL$1, __cjsMetaURL$2, __cjsMetaURL$3, __cjsMetaURL$4, __cjsMetaURL$5, __cjsMetaURL$6, __cjsMetaURL$7, __cjsMetaURL$8;
   return {
     setters: [function (module) {
