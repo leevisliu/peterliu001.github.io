@@ -2883,7 +2883,7 @@ System.register("chunks:///_virtual/ConfirmBox.ts", ['./rollupPluginModLoBabelHe
   };
 });
 
-System.register("chunks:///_virtual/CryptoTool.ts", ['cc', './index2.js', './DataConvert.ts', './XXTEA2.ts'], function (exports) {
+System.register("chunks:///_virtual/CryptoTool.ts", ['cc', './index.js', './DataConvert.ts', './XXTEA2.ts'], function (exports) {
   var cclegacy, CryptoES, DataConvert, XXTEA2;
   return {
     setters: [function (module) {
@@ -3118,7 +3118,7 @@ System.register("chunks:///_virtual/DataBinder.ts", ['cc', './mobx.ts'], functio
   };
 });
 
-System.register("chunks:///_virtual/DataConvert.ts", ['cc', './index2.js'], function (exports) {
+System.register("chunks:///_virtual/DataConvert.ts", ['cc', './index.js'], function (exports) {
   var cclegacy, CryptoES;
   return {
     setters: [function (module) {
@@ -51489,7 +51489,7 @@ System.register("chunks:///_virtual/TelegramAPI.ts", ['./rollupPluginModLoBabelH
   };
 });
 
-System.register("chunks:///_virtual/TelegramDeviceBridge.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.js', './CocosDevKit.ts', './CryptoTool.ts', './OnError.ts', './GameConfig.ts', './Logger.ts'], function (exports) {
+System.register("chunks:///_virtual/TelegramDeviceBridge.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index2.js', './CocosDevKit.ts', './CryptoTool.ts', './OnError.ts', './GameConfig.ts', './Logger.ts'], function (exports) {
   var _createClass, _asyncToGenerator, _regeneratorRuntime, cclegacy, settings, sys, Cs, A, as, ms, vt, cs, is, ns, gs, CryptoTool, OnError, GameConfig, Log;
   return {
     setters: [function (module) {
