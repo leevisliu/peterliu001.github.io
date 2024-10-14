@@ -1,0 +1,438 @@
+{
+	"groups": [
+		{
+			"keys": "description_json,classData_json,enemyData_json,gradeData_json,eff_dead_png,eff_dead_json,eff_skill_png,eff_skill_json,eff_bullet_json,eff_bullet_png,eff_hurt_json,eff_hurt_png,eff_fire_png,eff_fire_json,bullet_h_b1_png,bullet_h_b2_png,bullet_j_b_png,bullet_p_b1_png,bullet_p_b2_png,bullet_p_b3_png,bullet_dj_b_png,eff_updata_json,eff_updata_png,eff_build_png,eff_build_json,eff_end_json,eff_end_png,Tower_json,Enemy_json,map_01_01_png,map_01_02_png,map_01_03_png,map_01_04_png,map_02_01_png,map_02_02_png,map_02_03_png,map_02_04_png,map_03_01_png,map_03_02_png,map_03_03_png,map_03_04_png,map_03_05_png,map_03_06_png,map_04_01_png,map_04_02_png,map_04_03_png,tower_bg_1_png,bj_01_jpg,hyzw_chouti_01_png,hyzw_kuang_png,hyzw_kuang_01_png,hyzw_neir01_png,hyzw_neir02_png,hyzw_neir03_png,hyzw_zi_01_png,icon-144_png,lightEffect_png,UI_01_json,ui_button_98_png,ui_dl_01_02_png,ui_dl_01_01_png,ui_dl_02_01_png,ui_dl_02_02_png,ui_dl_02_03_png,ui_ktjl_png,ui_02_json,ui_qd_02_01_png",
+			"name": "preload"
+		},
+		{
+			"keys": "bigDie_mp3,bossDie_mp3,bossShow_mp3,button_mp3,littleDie_mp3,lose_mp3,middleDie_mp3,pass_mp3,add_mp3,gatlin_mp3,laser_mp3,radial_mp3,rocket_mp3,shell_mp3,wave_mp3,electric_mp3,bgm_mp3",
+			"name": "music"
+		}
+	],
+	"resources": [
+		{
+			"url": "config/description.json",
+			"type": "json",
+			"name": "description_json"
+		},
+		{
+			"url": "assets/Data/classData.json",
+			"type": "json",
+			"name": "classData_json"
+		},
+		{
+			"url": "assets/Data/enemyData.json",
+			"type": "json",
+			"name": "enemyData_json"
+		},
+		{
+			"url": "assets/Data/gradeData.json",
+			"type": "json",
+			"name": "gradeData_json"
+		},
+		{
+			"url": "assets/effect/eff_dead.png",
+			"type": "image",
+			"name": "eff_dead_png"
+		},
+		{
+			"url": "assets/effect/eff_dead.json",
+			"type": "json",
+			"name": "eff_dead_json"
+		},
+		{
+			"url": "assets/effect/eff_skill.png",
+			"type": "image",
+			"name": "eff_skill_png"
+		},
+		{
+			"url": "assets/effect/eff_skill.json",
+			"type": "json",
+			"name": "eff_skill_json"
+		},
+		{
+			"url": "assets/bullet/eff_bullet.json",
+			"type": "json",
+			"name": "eff_bullet_json"
+		},
+		{
+			"url": "assets/bullet/eff_bullet.png",
+			"type": "image",
+			"name": "eff_bullet_png"
+		},
+		{
+			"url": "assets/bullet/eff_hurt.json",
+			"type": "json",
+			"name": "eff_hurt_json"
+		},
+		{
+			"url": "assets/bullet/eff_hurt.png",
+			"type": "image",
+			"name": "eff_hurt_png"
+		},
+		{
+			"url": "assets/bullet/eff_fire.png",
+			"type": "image",
+			"name": "eff_fire_png"
+		},
+		{
+			"url": "assets/bullet/eff_fire.json",
+			"type": "json",
+			"name": "eff_fire_json"
+		},
+		{
+			"url": "assets/bullet/bullet_h_b1.png",
+			"type": "image",
+			"name": "bullet_h_b1_png"
+		},
+		{
+			"url": "assets/bullet/bullet_h_b2.png",
+			"type": "image",
+			"name": "bullet_h_b2_png"
+		},
+		{
+			"url": "assets/bullet/bullet_j_b.png",
+			"type": "image",
+			"name": "bullet_j_b_png"
+		},
+		{
+			"url": "assets/bullet/bullet_p_b1.png",
+			"type": "image",
+			"name": "bullet_p_b1_png"
+		},
+		{
+			"url": "assets/bullet/bullet_p_b2.png",
+			"type": "image",
+			"name": "bullet_p_b2_png"
+		},
+		{
+			"url": "assets/bullet/bullet_p_b3.png",
+			"type": "image",
+			"name": "bullet_p_b3_png"
+		},
+		{
+			"url": "assets/bullet/bullet_dj_b.png",
+			"type": "image",
+			"name": "bullet_dj_b_png"
+		},
+		{
+			"url": "assets/effect/eff_updata.json",
+			"type": "json",
+			"name": "eff_updata_json"
+		},
+		{
+			"url": "assets/effect/eff_updata.png",
+			"type": "image",
+			"name": "eff_updata_png"
+		},
+		{
+			"url": "assets/effect/eff_build.png",
+			"type": "image",
+			"name": "eff_build_png"
+		},
+		{
+			"url": "assets/effect/eff_build.json",
+			"type": "json",
+			"name": "eff_build_json"
+		},
+		{
+			"url": "assets/effect/eff_end.json",
+			"type": "json",
+			"name": "eff_end_json"
+		},
+		{
+			"url": "assets/effect/eff_end.png",
+			"type": "image",
+			"name": "eff_end_png"
+		},
+		{
+			"url": "assets/music/bigDie.mp3",
+			"type": "sound",
+			"name": "bigDie_mp3"
+		},
+		{
+			"url": "assets/music/bossDie.mp3",
+			"type": "sound",
+			"name": "bossDie_mp3"
+		},
+		{
+			"url": "assets/music/bossShow.mp3",
+			"type": "sound",
+			"name": "bossShow_mp3"
+		},
+		{
+			"url": "assets/music/button.mp3",
+			"type": "sound",
+			"name": "button_mp3"
+		},
+		{
+			"url": "assets/music/littleDie.mp3",
+			"type": "sound",
+			"name": "littleDie_mp3"
+		},
+		{
+			"url": "assets/music/lose.mp3",
+			"type": "sound",
+			"name": "lose_mp3"
+		},
+		{
+			"url": "assets/music/middleDie.mp3",
+			"type": "sound",
+			"name": "middleDie_mp3"
+		},
+		{
+			"url": "assets/music/pass.mp3",
+			"type": "sound",
+			"name": "pass_mp3"
+		},
+		{
+			"url": "assets/tower/Tower.json",
+			"type": "sheet",
+			"name": "Tower_json",
+			"subkeys": "tower_CJG1_png,tower_CJG2_png,tower_CJG3_png,tower_CJG4_png,tower_CJGD_png,tower_DC1_png,tower_DC2_png,tower_DC3_png,tower_DC4_png,tower_DC5_png,tower_DC6_png,tower_DCD_png,tower_DJG1_png,tower_DJG2_png,tower_DJG3_png,tower_DJG4_png,tower_DJG5_png,tower_DJG6_png,tower_DJGD_png,tower_HJ1_png,tower_HJ2_png,tower_HJ3_png,tower_HJ4_png,tower_HJ5_png,tower_HJ6_png,tower_HJD_png,tower_JP1_png,tower_JP2_png,tower_JP3_png,tower_JP4_png,tower_JP5_png,tower_JP6_png,tower_JPD_png,tower_JQ1_png,tower_JQ2_png,tower_JQ3_png,tower_JQ4_png,tower_JQ5_png,tower_JQ6_png,tower_JQD_png,tower_XP1_png,tower_XP2_png,tower_XP3_png,tower_XP4_png,tower_XP5_png,tower_XP6_png,tower_XPD_png"
+		},
+		{
+			"url": "assets/enemy/Enemy.json",
+			"type": "sheet",
+			"name": "Enemy_json",
+			"subkeys": "enemy_1_png,enemy_2_png,enemy_3_png,enemy_4_png"
+		},
+		{
+			"url": "assets/map/map_01_01.png",
+			"type": "image",
+			"name": "map_01_01_png"
+		},
+		{
+			"url": "assets/map/map_01_02.png",
+			"type": "image",
+			"name": "map_01_02_png"
+		},
+		{
+			"url": "assets/map/map_01_03.png",
+			"type": "image",
+			"name": "map_01_03_png"
+		},
+		{
+			"url": "assets/map/map_01_04.png",
+			"type": "image",
+			"name": "map_01_04_png"
+		},
+		{
+			"url": "assets/map/map_02_01.png",
+			"type": "image",
+			"name": "map_02_01_png"
+		},
+		{
+			"url": "assets/map/map_02_02.png",
+			"type": "image",
+			"name": "map_02_02_png"
+		},
+		{
+			"url": "assets/map/map_02_03.png",
+			"type": "image",
+			"name": "map_02_03_png"
+		},
+		{
+			"url": "assets/map/map_02_04.png",
+			"type": "image",
+			"name": "map_02_04_png"
+		},
+		{
+			"url": "assets/map/map_03_01.png",
+			"type": "image",
+			"name": "map_03_01_png"
+		},
+		{
+			"url": "assets/map/map_03_02.png",
+			"type": "image",
+			"name": "map_03_02_png"
+		},
+		{
+			"url": "assets/map/map_03_03.png",
+			"type": "image",
+			"name": "map_03_03_png"
+		},
+		{
+			"url": "assets/map/map_03_04.png",
+			"type": "image",
+			"name": "map_03_04_png"
+		},
+		{
+			"url": "assets/map/map_03_05.png",
+			"type": "image",
+			"name": "map_03_05_png"
+		},
+		{
+			"url": "assets/map/map_03_06.png",
+			"type": "image",
+			"name": "map_03_06_png"
+		},
+		{
+			"url": "assets/map/map_04_01.png",
+			"type": "image",
+			"name": "map_04_01_png"
+		},
+		{
+			"url": "assets/map/map_04_02.png",
+			"type": "image",
+			"name": "map_04_02_png"
+		},
+		{
+			"url": "assets/map/map_04_03.png",
+			"type": "image",
+			"name": "map_04_03_png"
+		},
+		{
+			"url": "assets/map/tower_bg_1.png",
+			"type": "image",
+			"name": "tower_bg_1_png"
+		},
+		{
+			"url": "assets/music/add.mp3",
+			"type": "sound",
+			"name": "add_mp3"
+		},
+		{
+			"url": "assets/music/gatlin.mp3",
+			"type": "sound",
+			"name": "gatlin_mp3"
+		},
+		{
+			"url": "assets/music/laser.mp3",
+			"type": "sound",
+			"name": "laser_mp3"
+		},
+		{
+			"url": "assets/music/radial.mp3",
+			"type": "sound",
+			"name": "radial_mp3"
+		},
+		{
+			"url": "assets/music/rocket.mp3",
+			"type": "sound",
+			"name": "rocket_mp3"
+		},
+		{
+			"url": "assets/music/shell.mp3",
+			"type": "sound",
+			"name": "shell_mp3"
+		},
+		{
+			"url": "assets/music/wave.mp3",
+			"type": "sound",
+			"name": "wave_mp3"
+		},
+		{
+			"url": "assets/music/electric.mp3",
+			"type": "sound",
+			"name": "electric_mp3"
+		},
+		{
+			"url": "assets/map/bj_01.jpg",
+			"type": "image",
+			"name": "bj_01_jpg"
+		},
+		{
+			"url": "assets/dl/hyzw_chouti_01.png",
+			"type": "image",
+			"name": "hyzw_chouti_01_png"
+		},
+		{
+			"url": "assets/dl/hyzw_kuang.png",
+			"type": "image",
+			"name": "hyzw_kuang_png"
+		},
+		{
+			"url": "assets/dl/hyzw_kuang_01.png",
+			"type": "image",
+			"name": "hyzw_kuang_01_png"
+		},
+		{
+			"url": "assets/dl/hyzw_neir01.png",
+			"type": "image",
+			"name": "hyzw_neir01_png"
+		},
+		{
+			"url": "assets/dl/hyzw_neir02.png",
+			"type": "image",
+			"name": "hyzw_neir02_png"
+		},
+		{
+			"url": "assets/dl/hyzw_neir03.png",
+			"type": "image",
+			"name": "hyzw_neir03_png"
+		},
+		{
+			"url": "assets/dl/hyzw_zi_01.png",
+			"type": "image",
+			"name": "hyzw_zi_01_png"
+		},
+		{
+			"url": "assets/dl/icon-144.png",
+			"type": "image",
+			"name": "icon-144_png"
+		},
+		{
+			"url": "assets/dl/lightEffect.png",
+			"type": "image",
+			"name": "lightEffect_png"
+		},
+		{
+			"url": "assets/music/bgm.mp3",
+			"type": "sound",
+			"name": "bgm_mp3"
+		},
+		{
+			"url": "assets/ui/UI_01.json",
+			"type": "sheet",
+			"name": "UI_01_json",
+			"subkeys": "attackScope_png,box_01_png,box_png,cjdj_01_png,cjdj_02_png,hp_c1_png,hp_c2_png,hp_c3_png,icon_shop_reclaim_png,rank_item_avatar_png,rank_self_png,rank_top_png,redDot_png,ui_01_01_png,ui_01_02_png,ui_01_03_png,ui_01_04_png,ui_01_05_png,ui_01_06_png,ui_01_07_png,ui_01_08_png,ui_01_09_png,ui_01_10_png,ui_01_11_png,ui_01_12_png,ui_01_13_png,ui_01_14_png,ui_01_15_png,ui_01_16_png,ui_01_17_png,ui_01_18_png,ui_bossOut_png,ui_bossWin_png,ui_bottom_01_png,ui_bottom_02_png,ui_bottom_03_png,ui_bottom_04_png,ui_bottom_05_png,ui_bottom_06_png,ui_bottom_07_png,ui_bottom_png,ui_box_01_png,ui_box_02_png,ui_box_03_png,ui_build_water_png,ui_button_01_png,ui_button_02_png,ui_button_03_png,ui_button_04_png,ui_button_05_png,ui_close_png,ui_enemy_shadow_png,ui_enemy_slow_png,ui_func_lock_png,ui_func_rect_png,ui_g_buildUpProb_png,ui_g_coin_png,ui_g_crit_png,ui_g_libraryCount_png,ui_g_price_png,ui_g_towerPower_png,ui_hp_rect_png,ui_icon_set_png,ui_lose_png,ui_max_png,ui_menu_01_png,ui_menu_02_png,ui_menu_03_png,ui_menu_04_png,ui_menuname_01_01_png,ui_menuname_01_02_png,ui_menuname_02_01_png,ui_menuname_02_02_png,ui_menuname_03_01_png,ui_menuname_03_02_png,ui_menuname_04_01_png,ui_menuname_04_02_png,ui_menuname_05_01_png,ui_mergeRemind_png,ui_money_01_png,ui_money_02_png,ui_offline_x2_png,ui_offline_x5_png,ui_rank_01_png,ui_rank_02_png,ui_rank_03_png,ui_reclaim_tips_png,ui_setting_01_01_png,ui_setting_01_02_png,ui_share_01_png,ui_share_02_png,ui_share_03_png,ui_share_04_png,ui_skill_01_png,ui_skill_02_png,ui_skill_03_png,ui_skill_04_png,ui_swin_arrow_png,ui_top_01_png,ui_top_02_png,ui_top_03_png,ui_top_png,ui_towerLevel_png,ui_win_demo_8_png,ui_win_demo_avt_rect_png,ui_win_lock_png,ui_win_png,ui_yindao1_png,ui_yindao2_png"
+		},
+		{
+			"url": "assets/ui/ui_button_98.png",
+			"type": "image",
+			"name": "ui_button_98_png"
+		},
+		{
+			"url": "assets/ui/ui_dl_01_02.png",
+			"type": "image",
+			"name": "ui_dl_01_02_png"
+		},
+		{
+			"url": "assets/ui/ui_dl_01_01.png",
+			"type": "image",
+			"name": "ui_dl_01_01_png"
+		},
+		{
+			"url": "assets/ui/ui_dl_02_01.png",
+			"type": "image",
+			"name": "ui_dl_02_01_png"
+		},
+		{
+			"url": "assets/ui/ui_dl_02_02.png",
+			"type": "image",
+			"name": "ui_dl_02_02_png"
+		},
+		{
+			"url": "assets/ui/ui_dl_02_03.png",
+			"type": "image",
+			"name": "ui_dl_02_03_png"
+		},
+		{
+			"name": "ui_ktjl_png",
+			"type": "image",
+			"url": "assets/ui/ui_ktjl.png"
+		},
+		{
+			"name": "ui_02_json",
+			"type": "sheet",
+			"url": "assets/ui/ui_02.json",
+			"subkeys": "ui_qd_01_png,ui_qd_02_02_png,ui_qd_03_01_png,ui_qd_03_02_png,ui_qd_04_01_png,ui_qd_04_02_png,ui_qd_04_03_png,ui_qd_05_01_png"
+		},
+		{
+			"name": "ui_qd_02_01_png",
+			"type": "image",
+			"url": "assets/ui/ui_qd_02_01.png"
+		}
+	]
+}

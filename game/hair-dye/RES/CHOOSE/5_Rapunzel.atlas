@@ -1,0 +1,45 @@
+
+5_Rapunzel.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 693, 259
+  size: 214, 250
+  orig: 216, 252
+  offset: 1, 1
+  index: -1
+Eb
+  rotate: false
+  xy: 2, 2
+  size: 85, 38
+  orig: 87, 40
+  offset: 1, 1
+  index: -1
+Face
+  rotate: false
+  xy: 693, 511
+  size: 222, 351
+  orig: 224, 353
+  offset: 1, 1
+  index: -1
+Hair_Back
+  rotate: false
+  xy: 2, 42
+  size: 689, 820
+  orig: 691, 822
+  offset: 1, 1
+  index: -1
+
+5_Rapunzel2.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Leg
+  rotate: false
+  xy: 2, 2
+  size: 368, 559
+  orig: 370, 561
+  offset: 1, 1
+  index: -1

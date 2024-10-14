@@ -1,0 +1,47 @@
+
+1_Elsa.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 700, 703
+  size: 155, 314
+  orig: 157, 316
+  offset: 1, 1
+  index: -1
+Eb
+  rotate: true
+  xy: 334, 62
+  size: 105, 28
+  orig: 105, 28
+  offset: 0, 0
+  index: -1
+Face
+  rotate: true
+  xy: 2, 2
+  size: 165, 330
+  orig: 167, 332
+  offset: 1, 1
+  index: -1
+Hend_L
+  rotate: false
+  xy: 700, 346
+  size: 71, 355
+  orig: 73, 357
+  offset: 1, 1
+  index: -1
+Hend_R
+  rotate: false
+  xy: 2, 169
+  size: 389, 848
+  orig: 391, 850
+  offset: 1, 1
+  index: -1
+Leg
+  rotate: false
+  xy: 393, 373
+  size: 305, 644
+  orig: 307, 646
+  offset: 1, 1
+  index: -1

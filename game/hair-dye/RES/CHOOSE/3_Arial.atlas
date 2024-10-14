@@ -1,0 +1,47 @@
+
+3_Arial.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 620, 707
+  size: 255, 305
+  orig: 257, 307
+  offset: 1, 1
+  index: -1
+Eb
+  rotate: false
+  xy: 620, 647
+  size: 86, 58
+  orig: 88, 60
+  offset: 1, 1
+  index: -1
+Face
+  rotate: false
+  xy: 2, 83
+  size: 270, 302
+  orig: 272, 304
+  offset: 1, 1
+  index: -1
+Hend_L
+  rotate: false
+  xy: 274, 213
+  size: 108, 172
+  orig: 110, 174
+  offset: 1, 1
+  index: -1
+Hend_R
+  rotate: true
+  xy: 2, 2
+  size: 79, 190
+  orig: 81, 192
+  offset: 1, 1
+  index: -1
+Leg
+  rotate: false
+  xy: 2, 387
+  size: 616, 625
+  orig: 618, 627
+  offset: 1, 1
+  index: -1

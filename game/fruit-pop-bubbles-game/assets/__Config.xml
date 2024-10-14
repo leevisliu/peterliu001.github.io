@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<settings>
+		<font name="grobold-webfont" />
+		<asciiArt>
+</asciiArt>
+		<urls blank="false">
+			<website></website>
+			<author></author>
+		</urls>
+		<googleAnalytics id="" enabled="true" />
+		<audioHoldDelay>0</audioHoldDelay>
+	</settings>
+	<gui>
+		<audioHoldMessage>Tap Anywhere To Continue</audioHoldMessage>
+		<buttons>
+			<instructions>How To Play</instructions>
+			<unpause>Resume</unpause>
+			<audio>Toggle Sound</audio>
+			<fullScreen>Full Screen</fullScreen>
+			<back>Main Menu</back>
+			<testMode>
+				<win>Win</win>
+				<lose>Lose</lose>
+			</testMode>
+		</buttons>
+		<scenes>
+			<game>
+				<hud>
+					<score>Score</score>
+					<time>Time</time>
+				</hud>
+			</game>
+			<instructions><![CDATA[Connecting three or more identical baubles makes them pop-pop!<br/><br/>When all baubles are popped, you win!<br/><br/>If baubles reach the bottom, or you run out of time, you lose!<br/><br/>Earn more stars by completing the level faster.]]></instructions>
+			<results>
+				<message>Well done&lt;br/&gt;you scored</message>
+				<win>New high score!</win>
+				<lose>High score&lt;br/&gt;__HIGH_SCORE__</lose>
+			</results>
+		</scenes>
+	</gui>
+</data>

@@ -1,0 +1,10 @@
+window.gamemonetize={
+  initState:function(){
+    console.log("initState");
+  }
+}
+window.sdk={
+  showBanner:function(){
+    console.log("showBanner===>");
+  }
+}

@@ -1,0 +1,5 @@
+window['sdk'] = {
+    showBanner:function () {
+        
+    }
+}

@@ -1,0 +1,54 @@
+
+4_Jasmin.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Back_Hair
+  rotate: false
+  xy: 2, 2
+  size: 315, 449
+  orig: 317, 451
+  offset: 1, 1
+  index: -1
+Body
+  rotate: false
+  xy: 319, 181
+  size: 160, 270
+  orig: 162, 272
+  offset: 1, 1
+  index: -1
+Eb
+  rotate: false
+  xy: 319, 126
+  size: 86, 53
+  orig: 86, 53
+  offset: 0, 0
+  index: -1
+Face
+  rotate: false
+  xy: 496, 783
+  size: 238, 194
+  orig: 240, 196
+  offset: 1, 1
+  index: -1
+Hend_L
+  rotate: false
+  xy: 736, 800
+  size: 114, 177
+  orig: 116, 179
+  offset: 1, 1
+  index: -1
+Hend_R
+  rotate: false
+  xy: 496, 610
+  size: 151, 171
+  orig: 153, 173
+  offset: 1, 1
+  index: -1
+Leg
+  rotate: false
+  xy: 2, 453
+  size: 492, 524
+  orig: 494, 526
+  offset: 1, 1
+  index: -1

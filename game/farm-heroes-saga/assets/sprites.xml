@@ -1,0 +1,29 @@
+<TextureAtlas imagePath="sprites.png">
+	<SubTexture name="Mutemusicbnt2.png" x="434" y="791" width="118" height="124"/>
+	<SubTexture name="bgPause2.png" x="0" y="217" width="450" height="389"/>
+	<SubTexture name="buy_bnt2.png" x="175" y="942" width="137" height="77"/>
+	<SubTexture name="cancel2.png" x="610" y="637" width="71" height="74"/>
+	<SubTexture name="container_fruit_req2.png" x="610" y="565" width="80" height="70"/>
+	<SubTexture name="container_price2.png" x="0" y="942" width="173" height="48"/>
+	<SubTexture name="container_stars2.png" x="0" y="992" width="122" height="22"/>
+	<SubTexture name="container_tuto2.png" x="0" y="0" width="567" height="215"/>
+	<SubTexture name="creditsBnt2.png" x="570" y="341" width="113" height="119"/>
+	<SubTexture name="goodjob2.png" x="0" y="910" width="189" height="30"/>
+	<SubTexture name="great2.png" x="191" y="910" width="124" height="30"/>
+	<SubTexture name="hand_tuto2.png" x="626" y="915" width="60" height="96"/>
+	<SubTexture name="levelsbnt2.png" x="554" y="791" width="116" height="122"/>
+	<SubTexture name="logo2.png" x="0" y="608" width="432" height="300"/>
+	<SubTexture name="menubnt2.png" x="571" y="226" width="93" height="98"/>
+	<SubTexture name="moreg2.png" x="452" y="465" width="116" height="122"/>
+	<SubTexture name="musicbnt2.png" x="452" y="341" width="116" height="122"/>
+	<SubTexture name="pausebnt2.png" x="571" y="124" width="100" height="100"/>
+	<SubTexture name="playbtn2.png" x="434" y="608" width="174" height="181"/>
+	<SubTexture name="power_up_killall2.png" x="570" y="462" width="101" height="101"/>
+	<SubTexture name="power_up_killline2.png" x="420" y="917" width="101" height="101"/>
+	<SubTexture name="power_up_killone2.png" x="317" y="917" width="101" height="101"/>
+	<SubTexture name="power_up_propre2.png" x="523" y="917" width="101" height="101"/>
+	<SubTexture name="replaybnt2.png" x="452" y="217" width="117" height="122"/>
+	<SubTexture name="resumebnt2.png" x="569" y="0" width="116" height="122"/>
+	<SubTexture name="star_empty2.png" x="570" y="565" width="28" height="27"/>
+	<SubTexture name="star_full2.png" x="124" y="992" width="28" height="27"/>
+</TextureAtlas>

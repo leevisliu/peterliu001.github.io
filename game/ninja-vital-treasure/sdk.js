@@ -1,0 +1,5 @@
+window['gdApi'] = {
+    showBanner: function () {
+
+    }
+}

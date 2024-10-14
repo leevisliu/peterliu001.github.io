@@ -1,0 +1,46 @@
+{"mc":{
+	"eff_build":{
+		"frameRate":12,
+		"labels":[
+			{"name":"act","frame":1,"end":5}
+			
+			],
+		"events":[
+			
+			],
+		"frames":[
+			
+			{
+			"res":"eft_towerBuild_1",
+			"x":6,
+			"y":6
+			},
+			{
+			"res":"eft_towerBuild_2",
+			"x":5,
+			"y":5
+			},
+			{
+			"res":"eft_towerBuild_3",
+			"x":4,
+			"y":4
+			},
+			{
+			"res":"eft_towerBuild_4",
+			"x":0,
+			"y":0
+			},
+			{
+			"res":"eft_towerBuild_5",
+			"x":4,
+			"y":4
+			}
+			]
+}},
+	"res":{
+		"eft_towerBuild_3":{"x":0,"y":265,"w":126,"h":126},
+		"eft_towerBuild_1":{"x":129,"y":263,"w":123,"h":123},
+		"eft_towerBuild_4":{"x":0,"y":0,"w":134,"h":134},
+		"eft_towerBuild_5":{"x":0,"y":136,"w":127,"h":127},
+		"eft_towerBuild_2":{"x":129,"y":136,"w":125,"h":125}
+	}}

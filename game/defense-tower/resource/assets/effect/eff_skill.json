@@ -1,0 +1,52 @@
+{"mc":{
+	"eff_skill":{
+		"frameRate":24,
+		"labels":[
+			{"name":"act","frame":1,"end":6}
+			
+			],
+		"events":[
+			
+			],
+		"frames":[
+			
+			{
+			"res":"ani_skill_1",
+			"x":23,
+			"y":35
+			},
+			{
+			"res":"ani_skill_2",
+			"x":24,
+			"y":28
+			},
+			{
+			"res":"ani_skill_3",
+			"x":21,
+			"y":20
+			},
+			{
+			"res":"ani_skill_4",
+			"x":19,
+			"y":12
+			},
+			{
+			"res":"ani_skill_5",
+			"x":15,
+			"y":8
+			},
+			{
+			"res":"ani_skill_6",
+			"x":12,
+			"y":1
+			}
+			]
+}},
+	"res":{
+		"ani_skill_3":{"x":326,"y":0,"w":137,"h":188},
+		"ani_skill_2":{"x":0,"y":169,"w":142,"h":180},
+		"ani_skill_5":{"x":167,"y":0,"w":159,"h":177},
+		"ani_skill_1":{"x":289,"y":188,"w":138,"h":139},
+		"ani_skill_6":{"x":0,"y":0,"w":167,"h":169},
+		"ani_skill_4":{"x":142,"y":177,"w":147,"h":167}
+	}}
