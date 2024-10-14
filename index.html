@@ -36,6 +36,15 @@
 			frame.src = url;
 			frame.style.display = 'block'; // 显示 iframe
 			overlay.style.display = 'block'; // 显示覆盖层
+			if (frame.requestFullscreen) {
+				frame.requestFullscreen();
+			    } else if (frame.mozRequestFullScreen) { // Firefox
+				frame.mozRequestFullScreen();
+			    } else if (frame.webkitRequestFullscreen) { // Chrome, Safari and Opera
+				frame.webkitRequestFullscreen();
+			    } else if (frame.msRequestFullscreen) { // IE/Edge
+				frame.msRequestFullscreen();
+			    }
 		}
 		 function closeGame() {
 			const frame = document.getElementById('gameFrame');
